@@ -2,19 +2,24 @@
 <%= link_to 'New Post', new_post_path %>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th></th>
+        <th></th>
+    </tr>
 
-  <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.text %></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      </tr>
-  <% end %>
+    <% @posts.each do |post| %>
+        <tr>
+            <td><%= post.title %></td>
+            <td><%= post.text %></td>
+            <td><%= link_to 'Show', post_path(post) %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
 </table>
+
+<h2>Simon's Print Screen:</h2>
+<td><%= image_tag('working1.jpg') %></td>
+
